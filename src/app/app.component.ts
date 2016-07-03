@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import {AllFunPlacesComponent} from './all-fun-places/all-fun-places.component';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+
+// import {AllFunPlacesComponent} from './all-fun-places/all-fun-places.component';
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives:[AllFunPlacesComponent]
+  directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent {
   title = 'app works!';

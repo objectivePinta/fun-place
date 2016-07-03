@@ -11,6 +11,10 @@ const map: any = {
 
 /** User packages configuration. */
 const packages: any = {
+   'angular2-google-maps/core': {
+    defaultExtension: 'js',
+    main: 'index.js' // you can also use core.umd.js here, if you want faster loads
+   }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -34,8 +38,11 @@ const barrels: string[] = [
   'app',
   'app/shared',
   'app/all-fun-places',
+  'app/all-fun-places/fun-place-detail',
+  'app/all-fun-places/stars',
   /** @cli-barrel */
 ];
+
 
 const cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
@@ -50,7 +57,8 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    'main': 'main.js',
+    'angular2-google-maps': 'vendor/angular2-google-maps'
   },
   packages: cliSystemConfigPackages
 });
