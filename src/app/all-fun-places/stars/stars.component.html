@@ -1,6 +1,6 @@
 
 <fieldset class="rating">
-    <input [checked]="(rating>=5)" type="radio" id="star5"  value="5" />
+    <input [disabled]="true" [checked]="(rating>=5)" type="radio" id="star5"  value="5" />
     <label label class = "full" for="star5" title="Awesome - 5 stars"></label>
     <input [checked]="(rating>=4.5 && rating<5)" type="radio" id="star4half"  value="4.5" />
     <label  class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
