@@ -1,3 +1,34 @@
-<p>{{fplace.name}}</p>
-<p>{{fplace.rating}}</p>
-<button (click)="goBack()">Back</button>
+<div class="row">
+    <div class="col-lg-5">
+        <div class="media2">
+            <a class="pull-left" href="#">
+                <img class="media-object dp img-circle"
+                     src="http://previews.123rf.com/images/glorcza/glorcza1111/glorcza111100012/11273011-pizza-logo-Stock-Vector-restaurant.jpg"
+                     style="width: 100px;height:100px;">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{fplace.name}}</h4>
+                <h5> {{fplace.address}}</h5>
+                <hr style="margin:8px auto">
+                <!--<span class="label label-default">HTML5/CSS3</span>-->
+                <!--<span class="label label-default">jQuery</span>-->
+                <!--<span class="label label-info">CakePHP</span>-->
+                <!--<span class="label label-default">Android</span>-->
+            </div>
+            <app-stars [rating]="fplace.rating"></app-stars>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <sebm-google-map [latitude]="fplace.map.lat" [longitude]="fplace.map.lang" [zoom]="15">
+
+            <sebm-google-map-marker
+                    [latitude]="fplace.map.lat"
+                    [longitude]="fplace.map.lang"
+                    [label]="fplace.name"
+            ></sebm-google-map-marker>
+        </sebm-google-map>
+    </div>
+
+
+</div>
+<button (click)="goBack()" class="btn-info">Back</button>

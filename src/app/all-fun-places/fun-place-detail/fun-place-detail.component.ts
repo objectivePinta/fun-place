@@ -2,11 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute }  from '@angular/router';
 import {FunPlaceRepoService} from '../../shared/fun-place-repo.service';
 import {FunPlace} from '../../shared/fun-place.ts';
+import { GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
+import {StarsComponent} from '../stars/stars.component';
 @Component({
   moduleId: module.id,
   selector: 'app-fun-place-detail',
   templateUrl: 'fun-place-detail.component.html',
-  styleUrls: ['../../app.component.css']
+  styleUrls: ['../../app.component.css'],
+    directives: [GOOGLE_MAPS_DIRECTIVES,StarsComponent]
+
 })
 export class FunPlaceDetailComponent implements OnInit {
 fplace:FunPlace;
