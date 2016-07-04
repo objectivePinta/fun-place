@@ -21,24 +21,24 @@
 
 
 .scale-img {
-  
+
     position: relative;
 
 }
 
 .sebm-google-map-container {
   height: 400px;
-  width: 500px;
+  /*width: 500px;*/
 }
 
 .container1 {
   position: relative;
 }
 #clip {
-  
-    height: auto; 
-    width: auto; 
-    max-width: 100px; 
+
+    height: auto;
+    width: auto;
+    max-width: 100px;
     max-height: 100px;
     position: absolute;
   clip: rect(0, 100px, 200px, 0);
