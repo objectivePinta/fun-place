@@ -2,9 +2,12 @@
   <div class="jumbotron">
     <h3>Fun Places - we tell you what people think</h3> 
   </div>
-
 </div>
+<ul class="nav nav-tabs">
+  <!--<li role="presentation" class="active"><a href="#">Home</a></li>-->
+  <li role="presentation">    <a [routerLink]="['/all']">All fun centers</a></li>
+  <!--<li role="presentation"><a href="#">Messages</a></li>-->
+</ul>
   <nav>
-    <a [routerLink]="['/all']">All fun centers</a>
   </nav>
 <router-outlet></router-outlet>
