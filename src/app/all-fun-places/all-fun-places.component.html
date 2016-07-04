@@ -13,7 +13,7 @@
       </tr>
     </thead>
   <tbody  *ngFor="let item of _repo.FunPlaces">
-  <tr class="success" (click)="onSelect(item)">
+  <tr [class.success]="item.rating>=4" [class.info]="item.rating>=3 && item.rating<4" [class.warning]="item.rating<3 && item.rating>=2" [class.danger]="item.rating<2" (click)="onSelect(item)">
     <td>{{item.id}}</td>
     <td>{{item.name}}</td>
     <td>{{item.address}}</td>
