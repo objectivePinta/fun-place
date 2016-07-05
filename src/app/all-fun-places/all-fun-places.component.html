@@ -37,7 +37,6 @@
           <sebm-google-map [latitude]="45.6417654" [longitude]="25.627382" [zoom]="12">
 
             <sebm-google-map-marker *ngFor="let item of _repo.FunPlaces;let i = index"
-                                    [ng-mouseover]="clickedMarker(item.name, i)"
                                     (markerClick)="clickedMarker(item.name, i)"
                                     [latitude]="item.map.lat"
                                     [longitude]="item.map.lang"
@@ -46,7 +45,7 @@
           </sebm-google-map>
         </div>
       </div>
-      {{selected}}
+     <span *ngIf="selected!=null" class="label label-pill label-info"> {{selected}}</span>
     </div>
   </div>
 </div>
