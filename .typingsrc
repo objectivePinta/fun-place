@@ -1,2 +1,2 @@
-proxy=http://proxy.metro.ro:3128
+proxy=
 rejectUnauthorized=false
