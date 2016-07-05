@@ -4,6 +4,7 @@ import {FunPlaceDetailComponent} from './all-fun-places/fun-place-detail/fun-pla
 import {ReviewsComponent} from "./reviews/reviews.component";
 
 export const routes: RouterConfig = [
+  {path:'',redirectTo:'/all',terminal:true},
   { path: 'all', component: AllFunPlacesComponent  },
     { path: 'place/:id', component: FunPlaceDetailComponent },
   { path: 'place/:id/reviews', component: ReviewsComponent}
