@@ -1,9 +1,29 @@
-<p>
-    reviews works!
-</p>
-<ol>
-    <li *ngFor="let item of results">
-        {{item.content}}
-    </li>
+<h1><span class="label label-pill" [class.label-info]="results.length>0" [class.label-danger]="results.length==0">{{results.length}}</span> reviews for {{funPlace.name}}</h1>
 
-</ol>
+
+<table class="table table-inverse table table-bordered table-hover" *ngIf="results.length>0">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Review</th>
+    <th>Rating</th>
+    <th>Date of review</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of results; let i=index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{item.content}}</td>
+    <td> <app-stars [rating]="item.rating"></app-stars></td>
+    <td>{{item.date.toLocaleDateString()}}</td>
+  </tr>
+  </tbody>
+</table>
+<button class="btn-link" (click)="goBack()">Back</button>
+<button class="btn-link" (click)="goToAll()">All</button>
+
+<!--id:number;-->
+<!--idOfPlace:number;-->
+<!--content: string;-->
+<!--rating: number;-->
+<!--date:Date;-->
