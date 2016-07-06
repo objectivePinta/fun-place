@@ -11,17 +11,10 @@ const map: any = {
 
 /** User packages configuration. */
 const packages: any = {
-<<<<<<< 13df0c6fabacc2050af5c5786fa5f078ee619731
   'angular2-google-maps/core': {
     defaultExtension: 'js',
     main: 'index.js' // you can also use core.umd.js here, if you want faster loads
   }
-=======
-   'angular2-google-maps/core': {
-    defaultExtension: 'js',
-    main: 'index.js' // you can also use core.umd.js here, if you want faster loads
-   }
->>>>>>> add file deleted by mistake
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,10 +40,7 @@ const barrels: string[] = [
   'app/all-fun-places',
   'app/all-fun-places/fun-place-detail',
   'app/all-fun-places/stars',
-<<<<<<< 13df0c6fabacc2050af5c5786fa5f078ee619731
-=======
   'app/reviews',
->>>>>>> add file deleted by mistake
   /** @cli-barrel */
 ];
 
