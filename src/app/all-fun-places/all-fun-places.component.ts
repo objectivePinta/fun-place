@@ -24,4 +24,7 @@ export class AllFunPlacesComponent implements OnInit {
   onSelect(fplace:FunPlace) {
     this.router.navigate(['/place', fplace.id]);
   }
+  goToReviews(id:number) {
+    this.router.navigate(['/place/'+id+'/reviews']);
+  }
 }

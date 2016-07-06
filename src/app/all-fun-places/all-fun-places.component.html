@@ -1,51 +1,60 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="panel panel-info">
-        <div class="panel-heading">List of pizza's in your hometown</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">All the pizza's in your hometown</div>
+                <div class="panel-body">
 
-        <table class="table">
-          <thead>
-          <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>address</th>
-            <th>rating</th>
-            <th>rating image</th>
-          </tr>
-          </thead>
-          <tbody *ngFor="let item of _repo.FunPlaces">
-          <tr [class.success]="item.rating>=4" [class.info]="item.rating>=3 && item.rating<4"
-              [class.warning]="item.rating<3 && item.rating>=2" [class.danger]="item.rating<2" (click)="onSelect(item)">
-            <td>{{item.id}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.address}}</td>
-            <td>{{item.rating}}</td>
-            <td>
-              <app-stars [rating]="item.rating"></app-stars>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="panel panel-info">
-        <div class="panel-heading">All the pizza's in your hometown</div>
-        <div class="panel-body">
+                    <sebm-google-map [latitude]="45.6417654" [longitude]="25.627382" [zoom]="8">
 
-          <sebm-google-map [latitude]="45.6417654" [longitude]="25.627382" [zoom]="12">
-
-            <sebm-google-map-marker *ngFor="let item of _repo.FunPlaces;let i = index"
-                                    (markerClick)="clickedMarker(item.name, i)"
-                                    [latitude]="item.map.lat"
-                                    [longitude]="item.map.lang"
-                                    [label]="item.name"
-            ></sebm-google-map-marker>
-          </sebm-google-map>
+                        <sebm-google-map-marker *ngFor="let item of _repo.FunPlaces;let i = index"
+                                                (markerClick)="clickedMarker(item.name, i)"
+                                                [latitude]="item.map.lat"
+                                                [longitude]="item.map.lang"
+                                                [label]="item.name"
+                        ></sebm-google-map-marker>
+                    </sebm-google-map>
+                </div>
+            </div>
+            <span *ngIf="selected!=null" class="label label-pill label-info"> {{selected}}</span>
         </div>
-      </div>
-     <span *ngIf="selected!=null" class="label label-pill label-info"> {{selected}}</span>
     </div>
-  </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">List of pizza's in your hometown</div>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>address</th>
+                        <th>rating</th>
+                        <th>rating image</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody *ngFor="let item of _repo.FunPlaces">
+                    <tr [class.success]="item.rating>=4" [class.info]="item.rating>=3 && item.rating<4"
+                        [class.warning]="item.rating<3 && item.rating>=2" [class.danger]="item.rating<2">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.address}}</td>
+                        <td>{{item.rating}}</td>
+                        <td>
+                            <app-stars [rating]="item.rating"></app-stars>
+                        </td>
+                        <td>
+                            <button class="btn-success" (click)="goToReviews(item.id)">Reviews</button>
+                            <button class="btn-info" (click)="onSelect(item)">Place details</button>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
